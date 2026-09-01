@@ -1,0 +1,3 @@
+import { HeartHandshake } from 'lucide-react'
+import { Logo } from '../common/Logo'
+export function Footer() { return <footer className="border-t bg-white py-10"><div className="container-page grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><div><Logo /><p className="mt-4 max-w-lg text-sm leading-6 text-slate-500">VitaNexAI provides general health information and wellness guidance for educational purposes. It does not provide medical diagnosis or replace advice from a qualified healthcare professional.</p></div><div className="flex items-center gap-2 text-sm font-semibold text-teal-700"><HeartHandshake size={18}/> Made for everyday wellbeing</div></div></footer> }

@@ -1,5 +1,52 @@
 import type { LucideIcon } from 'lucide-react'
 
+export type AgeGroup = 'Newborn' | 'Infant' | 'Child' | 'Adolescent' | 'Adult' | 'Older Adult'
+export type SexCategory = 'Male' | 'Female' | 'Both'
+
+export type ReferenceRangeItem = {
+  ageGroup: AgeGroup
+  sex?: SexCategory
+  range: string
+  unit: string
+  min?: number
+  max?: number
+  notes?: string
+}
+
+export type HealthCategory =
+  | 'Vital Signs'
+  | 'Complete Blood Count (CBC)'
+  | 'Blood Chemistry'
+  | 'Liver Function'
+  | 'Kidney Function'
+  | 'Lipid Profile'
+  | 'Vitamins'
+  | 'Minerals & Electrolytes'
+  | 'Blood Sugar & Diabetes'
+  | 'General Health Measurements'
+  | 'Nutrition & Wellness'
+
+export type HealthInfo = {
+  id: string
+  title: string
+  category: HealthCategory
+  icon: LucideIcon
+  shortDescription: string
+  whatIsIt: string
+  whyItMatters?: string
+  howMeasured?: string
+  factorsAffecting?: string[]
+  whenToSeekCare?: string
+  referenceRanges?: ReferenceRangeItem[]
+  highMeaning?: string
+  lowMeaning?: string
+  foodSources?: string[]
+  relatedCalculatorId?: string
+  isMeasurableInModal?: boolean
+  pregnancyNote?: string
+  disclaimer?: string
+}
+
 export type HealthTopic = { id: string; name: string; description: string; range: string; icon: LucideIcon; unit?: string; min?: number; max?: number }
 export type ChatSection = { title: string; content?: string; items?: string[] }
 export type RelatedTool = { label: string; href: string; detail: string }
@@ -9,3 +56,4 @@ export type ApiConfig = { endpoint: string; apiKey: string; model: string }
 export type CalculatorCategory = 'Body & BMI' | 'Nutrition' | 'Lifestyle'
 export type CalculatorId = 'bmi' | 'bmr' | 'ideal-weight' | 'body-fat' | 'lean-mass' | 'waist-height' | 'daily-calories' | 'calorie-change' | 'protein' | 'macros' | 'calorie-burn' | 'water' | 'sleep' | 'target-heart-rate' | 'heart-rate-zones'
 export type CalculatorDefinition = { id: CalculatorId; title: string; description: string; category: CalculatorCategory; icon: LucideIcon }
+
